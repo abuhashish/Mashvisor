@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var people = [
+            {
+                "name": "John",
+                "age": 30,
+                "cars": [
+                    {
+                        "name": "Ford",
+                        "models": [
+                            "Fiesta",
+                            "Focus",
+                            "Mustang"
+                        ]
+                    },
+                    {
+                        "name": "BMW",
+                        "models": [
+                            "320",
+                            "X3",
+                            "X5"
+                        ]
+                    },
+                    {
+                        "name": "Fiat",
+                        "models": [
+                            "500",
+                            "Panda"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Pete",
+                "age": 40,
+                "cars": [
+                    {
+                        "name": "Ford",
+                        "models": [
+                            "Taunto",
+                            "Ranger"
+                        ]
+                    }
+                ]
+            }
+        ];
+        
+    </script>
+</head>
+<body>
+    <ul id="people"></ul>
+    <script>
+        var output = "";
+        for (var i in people){
+            
+            output += '<li>'+people[i].name+'</li>';
+        }
+        document.getElementById("people").innerHTML = output;
+    </script>
+</body>
+</html>
