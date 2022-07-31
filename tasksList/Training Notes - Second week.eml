@@ -1,0 +1,389 @@
+Delivered-To: aasahashish@gmail.com
+Received: by 2002:a4a:c615:0:0:0:0:0 with SMTP id l21csp1827261ooq;
+        Mon, 25 Jul 2022 05:30:50 -0700 (PDT)
+X-Google-Smtp-Source: AGRyM1th2ZMbAdCvogscZI353hqgBsOVDyGANfXfGlEo6Caj0zer6L3WZfth2Jc9RGAuEPtafTvW
+X-Received: by 2002:a05:600c:a07:b0:39e:da6e:fc49 with SMTP id z7-20020a05600c0a0700b0039eda6efc49mr20001605wmp.143.1658752250451;
+        Mon, 25 Jul 2022 05:30:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1658752250; cv=none;
+        d=google.com; s=arc-20160816;
+        b=RjwLK3cujPZJW89XB/QYRdP03/rd218Zm2AZ9cRKhoraLosxheeHpwctWaVpNJ5CZk
+         4JU0B+juMI6lOrZ9jyFA/9dqOSyngXvBhSOqoLgCuFXW82HaNhv1ErO2gumpmgFGiTaK
+         SB2fVbEZSOHQUu6Kffg5z5LLZYSNESFvMW1vAZk5UdmqHIsyNnkvAslfCEzp1dxh8JPJ
+         l3y+m+GlmLAOUvzJ389ysh8BYbm8qTnqpWsanL4m53Ta3SSKQNMEdrebmvP0avyfImAF
+         U6Hslw4/I+YPWGqslauHszZvIJ35Kzd0YMBcoAh6OvnOxURzs6NxkiAGM5rhbIrgZ8zh
+         PVWQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=XDRDYEj26QN8CoLgcpW0cOjHGpafGm5TLaDGornhx0I=;
+        b=vKlBmfpCFkTuTjm3086PPTmcalZ5k63N3a1sWeCUM1j68URS3dt8T2hp2ozFKlLHb4
+         hhizxykJ6sl83+XMSOB2R+meqt93x4/EEpitNDbfcTInJqH0wdJEp/z7yjIYjmiECee0
+         EKIH/kR4WAyxoGp+4TC2BxOEYuZ1NPYVuPLezCUQoNX5bJwF3lSB9AL0gKeLjx1jegx3
+         Kof/tWOyyxvkd1ivFiBhp7/UYcfiWikEXV5mL4FXOUJvrC7woGcXnmBHa3eFiZyikYWa
+         NvadlB5fHF/hlm2RXtJvGcaXKMe0blgApKGE/k4cSpvDL7GIjuhIc64FTEd9mFTBLXiz
+         RBrw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mashvisor.com header.s=google header.b=CquLzuMZ;
+       spf=pass (google.com: domain of tala@mashvisor.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=tala@mashvisor.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=mashvisor.com
+Return-Path: <tala@mashvisor.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id j12-20020adfb30c000000b0021dbcd93518sor5436513wrd.8.2022.07.25.05.30.50
+        for <Aasahashish@gmail.com>
+        (Google Transport Security);
+        Mon, 25 Jul 2022 05:30:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of tala@mashvisor.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mashvisor.com header.s=google header.b=CquLzuMZ;
+       spf=pass (google.com: domain of tala@mashvisor.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=tala@mashvisor.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=mashvisor.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=mashvisor.com; s=google;
+        h=mime-version:from:date:message-id:subject:cc;
+        bh=XDRDYEj26QN8CoLgcpW0cOjHGpafGm5TLaDGornhx0I=;
+        b=CquLzuMZKC9FGeBXOfoooEJN+mBmesYkS16CNfLsDgNDY2QxNVPZiU3r1kn/1rdxuy
+         eo3GjaGq9ZQiT9bEWdewQVoVgdJN6iclMKQz3jZAL//FXOnkmEDiS/GmsLsaJBLS6Puw
+         gztOO9SpwFZ8QLRKR+xL9rfcoKcd0PEyj6vXxvGF6W2BEaZXH9OTdeOgG7mUDkLr8VjL
+         i82cxI/pBCFlVpXqGLRKfW4ojII3p9Gc505kGEaq6ZtwsH8FhvQLfnaDVzvYuppx2EmE
+         oANtAaFAhldSvjzy1dBjPAtUOCAr8GJf52TTPGd3n6BSyw6zqunQb/5PGczQXbPUiPe/
+         0i3g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:cc;
+        bh=XDRDYEj26QN8CoLgcpW0cOjHGpafGm5TLaDGornhx0I=;
+        b=jGxzdtWEWcruXZgcM953kxmNdhlRkIxpsqIRs6gOkWUSdZFbw0LVTGiC09Lskh/zpd
+         2wETLAwYbr8u8WdtVnyUY/mpbU4EhTfheUTwPBY18uOSsml4Zz4R+efWyqi+XIkfcfaS
+         j5z/qZGW5JF+at+DIBlal3LPPZ+5IkUvio3sU90R3JFRaXzrcL53H9R9Q/HgOH5Odqva
+         EYTujyh5VQmwdvdHmlSWK1kcAZHV5GsWaOcyYogt/6TTs7qV9HP12aCPGSt1n0Xgw1XN
+         yFdZlB6dQIFusGL9bjCUKOKmcT2xoyLzpD6gEtNXhh4Zbrf8rf3GX5t4htbjJF0S7yBa
+         87fQ==
+X-Gm-Message-State: AJIora83Ct65GKiiGFMrr/djtnROTopigObwdfMMNiK5XMhGrtVS1fK9
+	dN50U5TdxEzjYzMHiMbb4m1pi6lSPx9JvwSDfYShrg==
+X-Received: by 2002:adf:e54a:0:b0:21e:61f3:de49 with SMTP id
+ z10-20020adfe54a000000b0021e61f3de49mt5488926wrm.25.1658752249673; Mon, 25
+ Jul 2022 05:30:49 -0700 (PDT)
+MIME-Version: 1.0
+From: Tala Jamal <tala@mashvisor.com>
+Date: Mon, 25 Jul 2022 15:30:37 +0300
+Message-ID: <CAHpupnyYDgwsre+Q26Y=4HHr1oQLKJMmRaQFmVy8cU-sniusyg@mail.gmail.com>
+Subject: Training Notes - Second week
+Cc: Mohammed Jebrini <mohd@mashvisor.com>
+Content-Type: multipart/alternative; boundary="0000000000009e21c105e4a05a06"
+Bcc: Aasahashish@gmail.com
+
+--0000000000009e21c105e4a05a06
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Thanks for being part of Mashvisor=E2=80=99s internship program for summer =
+2022,
+great job on filling your timesheet on a daily basis, please keep doing it.
+
+For next week we will be introducing you to a new cool set of tools that
+ensure the quality of work. It's important to use the right tools by
+world-class engineers to write world-class quality software.
+
+17th of July Week Items:
+
+
+   -
+
+   Code Quality Testing using Google Lighthouse Tool (link here
+   <https://developers.google.com/web/tools/lighthouse>)
+   -
+
+      For live websites testing: PageSpeed Insights Tool
+      <https://pagespeed.web.dev/?utm_source=3Dpsi&utm_medium=3Dredirect>
+      -
+
+      Core Web Vitals Report (learn more
+      <https://support.google.com/webmasters/answer/9205520?hl=3Den>)
+      -
+
+   Semantic HTML5
+   -
+
+      Learn HTML5 Semantics (Source 1
+      <https://www.w3schools.com/html/html5_semantic_elements.asp>)
+      -
+
+      MDN referenced (Source 2
+      <https://developer.mozilla.org/en-US/docs/Glossary/Semantics>)
+      -
+
+   Postman Tool for Calling Restful APIs
+   -
+
+      Learn how to use Postman (Link Here <https://www.postman.com/>)
+      -
+
+      Create a developer API key on https://build.mashvisor.com/api-doc/
+      -
+
+      Create 3 Postman collections for demo calls to Mashvisor APIs
+      (Search, Property Info, Rento Calculator)
+      -
+
+      Collect weather data using a FREE plan on OpenWeatherMap API
+      <https://openweathermap.org/api/one-call-3> (Using Postman) and save
+      them as a collection.
+      -
+
+   User Security and Authentication (Introduction)
+   -
+
+      HTTP Authentications methods (MDN source
+      <https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication>)
+      -
+
+      oAuth 1 https://oauth.net/1/ , oAuth2 https://oauth.net/2/
+      -
+
+      JWT (Learn more <https://jwt.io/>)
+
+
+The above tasks are supposed to be done by Thursday 28th of July 2022,
+we=E2=80=99ll send you a questionnaire later this week to be filled to trac=
+k your
+progress,
+
+Best luck
+
+Tala
+
+--0000000000009e21c105e4a05a06
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span id=3D"gmail-docs-internal-guid-cbc34545-7fff-898f-df=
+63-aa8c99866588"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;ma=
+rgin-bottom:0pt"><span style=3D"font-size:11pt;font-family:Arial;color:rgb(=
+0,0,0);background-color:transparent;font-variant-numeric:normal;font-varian=
+t-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">Hi,</span=
+></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bot=
+tom:0pt"><span style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0,0);b=
+ackground-color:transparent;font-variant-numeric:normal;font-variant-east-a=
+sian:normal;vertical-align:baseline;white-space:pre-wrap">Thanks for being =
+part of Mashvisor=E2=80=99s internship program for summer 2022, great job o=
+n filling your timesheet on a daily basis, please keep doing it.</span></p>=
+<br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0=
+pt"><span style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0,0);backgr=
+ound-color:transparent;font-variant-numeric:normal;font-variant-east-asian:=
+normal;vertical-align:baseline;white-space:pre-wrap">For next week we will =
+be introducing you to a new cool set of tools that ensure the quality of wo=
+rk. It&#39;s important to use the right tools by world-class engineers to w=
+rite world-class quality software.</span></p><br><p dir=3D"ltr" style=3D"li=
+ne-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:1=
+1pt;font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-we=
+ight:700;font-variant-numeric:normal;font-variant-east-asian:normal;vertica=
+l-align:baseline;white-space:pre-wrap">17th of July Week Items:</span></p><=
+br><ul style=3D"margin-top:0px;margin-bottom:0px"><li dir=3D"ltr" style=3D"=
+list-style-type:disc;font-size:11pt;font-family:Arial;color:rgb(0,0,0);back=
+ground-color:transparent;font-variant-numeric:normal;font-variant-east-asia=
+n:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><sp=
+an style=3D"font-size:11pt;background-color:transparent;font-variant-numeri=
+c:normal;font-variant-east-asian:normal;vertical-align:baseline;white-space=
+:pre-wrap">Code Quality Testing using </span><span style=3D"font-size:11pt;=
+background-color:transparent;font-weight:700;font-variant-numeric:normal;fo=
+nt-variant-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">=
+Google Lighthouse</span><span style=3D"font-size:11pt;background-color:tran=
+sparent;font-variant-numeric:normal;font-variant-east-asian:normal;vertical=
+-align:baseline;white-space:pre-wrap"> Tool (</span><a href=3D"https://deve=
+lopers.google.com/web/tools/lighthouse" style=3D"text-decoration-line:none"=
+><span style=3D"font-size:11pt;background-color:transparent;font-variant-nu=
+meric:normal;font-variant-east-asian:normal;text-decoration-line:underline;=
+vertical-align:baseline;white-space:pre-wrap">link here</span></a><span sty=
+le=3D"font-size:11pt;background-color:transparent;font-variant-numeric:norm=
+al;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre-w=
+rap">)</span></p></li><ul style=3D"margin-top:0px;margin-bottom:0px"><li di=
+r=3D"ltr" style=3D"list-style-type:circle;font-size:11pt;font-family:Arial;=
+color:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;f=
+ont-variant-east-asian:normal;vertical-align:baseline;white-space:pre"><p d=
+ir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt" role=
+=3D"presentation"><span style=3D"font-size:11pt;background-color:transparen=
+t;font-variant-numeric:normal;font-variant-east-asian:normal;vertical-align=
+:baseline;white-space:pre-wrap">For live websites testing: </span><a href=
+=3D"https://pagespeed.web.dev/?utm_source=3Dpsi&amp;utm_medium=3Dredirect" =
+style=3D"text-decoration-line:none"><span style=3D"font-size:11pt;backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;text-decoration-line:underline;vertical-align:baseline;white-space:pre-=
+wrap">PageSpeed Insights Tool</span></a></p></li><li dir=3D"ltr" style=3D"l=
+ist-style-type:circle;font-size:11pt;font-family:Arial;color:rgb(0,0,0);bac=
+kground-color:transparent;font-variant-numeric:normal;font-variant-east-asi=
+an:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"=
+line-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><s=
+pan style=3D"font-size:11pt;background-color:transparent;font-variant-numer=
+ic:normal;font-variant-east-asian:normal;vertical-align:baseline;white-spac=
+e:pre-wrap">Core Web Vitals Report (</span><a href=3D"https://support.googl=
+e.com/webmasters/answer/9205520?hl=3Den" style=3D"text-decoration-line:none=
+"><span style=3D"font-size:11pt;background-color:transparent;font-variant-n=
+umeric:normal;font-variant-east-asian:normal;text-decoration-line:underline=
+;vertical-align:baseline;white-space:pre-wrap">learn more</span></a><span s=
+tyle=3D"font-size:11pt;background-color:transparent;font-variant-numeric:no=
+rmal;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre=
+-wrap">)</span></p></li></ul><li dir=3D"ltr" style=3D"list-style-type:disc;=
+font-size:11pt;font-family:Arial;color:rgb(0,0,0);background-color:transpar=
+ent;font-variant-numeric:normal;font-variant-east-asian:normal;vertical-ali=
+gn:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margi=
+n-top:0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-size=
+:11pt;background-color:transparent;font-variant-numeric:normal;font-variant=
+-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">Semantic H=
+TML5</span></p></li><ul style=3D"margin-top:0px;margin-bottom:0px"><li dir=
+=3D"ltr" style=3D"list-style-type:circle;font-size:11pt;font-family:Arial;c=
+olor:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;fo=
+nt-variant-east-asian:normal;vertical-align:baseline;white-space:pre"><p di=
+r=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt" role=
+=3D"presentation"><span style=3D"font-size:11pt;background-color:transparen=
+t;font-variant-numeric:normal;font-variant-east-asian:normal;vertical-align=
+:baseline;white-space:pre-wrap">Learn HTML5 Semantics (</span><a href=3D"ht=
+tps://www.w3schools.com/html/html5_semantic_elements.asp" style=3D"text-dec=
+oration-line:none"><span style=3D"font-size:11pt;background-color:transpare=
+nt;font-variant-numeric:normal;font-variant-east-asian:normal;text-decorati=
+on-line:underline;vertical-align:baseline;white-space:pre-wrap">Source 1</s=
+pan></a><span style=3D"font-size:11pt;background-color:transparent;font-var=
+iant-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;=
+white-space:pre-wrap">)=C2=A0</span></p></li><li dir=3D"ltr" style=3D"list-=
+style-type:circle;font-size:11pt;font-family:Arial;color:rgb(0,0,0);backgro=
+und-color:transparent;font-variant-numeric:normal;font-variant-east-asian:n=
+ormal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line=
+-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span =
+style=3D"font-size:11pt;background-color:transparent;font-variant-numeric:n=
+ormal;font-variant-east-asian:normal;vertical-align:baseline;white-space:pr=
+e-wrap">MDN referenced (</span><a href=3D"https://developer.mozilla.org/en-=
+US/docs/Glossary/Semantics" style=3D"text-decoration-line:none"><span style=
+=3D"font-size:11pt;background-color:transparent;font-variant-numeric:normal=
+;font-variant-east-asian:normal;text-decoration-line:underline;vertical-ali=
+gn:baseline;white-space:pre-wrap">Source 2</span></a><span style=3D"font-si=
+ze:11pt;background-color:transparent;font-variant-numeric:normal;font-varia=
+nt-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">)</span>=
+</p></li></ul><li dir=3D"ltr" style=3D"list-style-type:disc;font-size:11pt;=
+font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-varian=
+t-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;whi=
+te-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margi=
+n-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;vertical-align:baseline;white-space:pre-wrap">Postman Tool for Calling =
+Restful APIs=C2=A0</span></p></li><ul style=3D"margin-top:0px;margin-bottom=
+:0px"><li dir=3D"ltr" style=3D"list-style-type:circle;font-size:11pt;font-f=
+amily:Arial;color:rgb(0,0,0);background-color:transparent;font-variant-nume=
+ric:normal;font-variant-east-asian:normal;vertical-align:baseline;white-spa=
+ce:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bott=
+om:0pt" role=3D"presentation"><span style=3D"font-size:11pt;background-colo=
+r:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;ve=
+rtical-align:baseline;white-space:pre-wrap">Learn how to use Postman (</spa=
+n><a href=3D"https://www.postman.com/" style=3D"text-decoration-line:none">=
+<span style=3D"font-size:11pt;background-color:transparent;font-variant-num=
+eric:normal;font-variant-east-asian:normal;text-decoration-line:underline;v=
+ertical-align:baseline;white-space:pre-wrap">Link Here</span></a><span styl=
+e=3D"font-size:11pt;background-color:transparent;font-variant-numeric:norma=
+l;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre-wr=
+ap">)</span></p></li><li dir=3D"ltr" style=3D"list-style-type:circle;font-s=
+ize:11pt;font-family:Arial;color:rgb(0,0,0);background-color:transparent;fo=
+nt-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:bas=
+eline;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:=
+0pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;=
+background-color:transparent;font-variant-numeric:normal;font-variant-east-=
+asian:normal;vertical-align:baseline;white-space:pre-wrap">Create a develop=
+er API key on </span><a href=3D"https://build.mashvisor.com/api-doc/" style=
+=3D"text-decoration-line:none"><span style=3D"font-size:11pt;background-col=
+or:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;t=
+ext-decoration-line:underline;vertical-align:baseline;white-space:pre-wrap"=
+>https://build.mashvisor.com/api-doc/</span></a><span style=3D"font-size:11=
+pt;background-color:transparent;font-variant-numeric:normal;font-variant-ea=
+st-asian:normal;vertical-align:baseline;white-space:pre-wrap">=C2=A0</span>=
+</p></li><li dir=3D"ltr" style=3D"list-style-type:circle;font-size:11pt;fon=
+t-family:Arial;color:rgb(0,0,0);background-color:transparent;font-variant-n=
+umeric:normal;font-variant-east-asian:normal;vertical-align:baseline;white-=
+space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-b=
+ottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;background-c=
+olor:transparent;font-variant-numeric:normal;font-variant-east-asian:normal=
+;vertical-align:baseline;white-space:pre-wrap">Create 3 Postman collections=
+ for demo calls to Mashvisor APIs (Search, Property Info, Rento Calculator)=
+</span></p></li><li dir=3D"ltr" style=3D"list-style-type:circle;font-size:1=
+1pt;font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-va=
+riant-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline=
+;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;m=
+argin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;backg=
+round-color:transparent;font-variant-numeric:normal;font-variant-east-asian=
+:normal;vertical-align:baseline;white-space:pre-wrap">Collect weather data =
+using a FREE plan on </span><a href=3D"https://openweathermap.org/api/one-c=
+all-3" style=3D"text-decoration-line:none"><span style=3D"font-size:11pt;ba=
+ckground-color:transparent;font-variant-numeric:normal;font-variant-east-as=
+ian:normal;text-decoration-line:underline;vertical-align:baseline;white-spa=
+ce:pre-wrap">OpenWeatherMap API</span></a><span style=3D"font-size:11pt;bac=
+kground-color:transparent;font-variant-numeric:normal;font-variant-east-asi=
+an:normal;vertical-align:baseline;white-space:pre-wrap"> (Using Postman) an=
+d save them as a collection.</span></p></li></ul><li dir=3D"ltr" style=3D"l=
+ist-style-type:disc;font-size:11pt;font-family:Arial;color:rgb(0,0,0);backg=
+round-color:transparent;font-variant-numeric:normal;font-variant-east-asian=
+:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"li=
+ne-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><spa=
+n style=3D"font-size:11pt;background-color:transparent;font-variant-numeric=
+:normal;font-variant-east-asian:normal;vertical-align:baseline;white-space:=
+pre-wrap">User Security and Authentication (Introduction)=C2=A0</span></p><=
+/li><ul style=3D"margin-top:0px;margin-bottom:0px"><li dir=3D"ltr" style=3D=
+"list-style-type:circle;font-size:11pt;font-family:Arial;color:rgb(0,0,0);b=
+ackground-color:transparent;font-variant-numeric:normal;font-variant-east-a=
+sian:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=
+=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation=
+"><span style=3D"font-size:11pt;background-color:transparent;font-variant-n=
+umeric:normal;font-variant-east-asian:normal;vertical-align:baseline;white-=
+space:pre-wrap">HTTP Authentications methods (</span><a href=3D"https://dev=
+eloper.mozilla.org/en-US/docs/Web/HTTP/Authentication" style=3D"text-decora=
+tion-line:none"><span style=3D"font-size:11pt;background-color:transparent;=
+font-variant-numeric:normal;font-variant-east-asian:normal;text-decoration-=
+line:underline;vertical-align:baseline;white-space:pre-wrap">MDN source</sp=
+an></a><span style=3D"font-size:11pt;background-color:transparent;font-vari=
+ant-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;w=
+hite-space:pre-wrap">)</span></p></li><li dir=3D"ltr" style=3D"list-style-t=
+ype:circle;font-size:11pt;font-family:Arial;color:rgb(0,0,0);background-col=
+or:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;v=
+ertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line-height=
+:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span style=
+=3D"font-size:11pt;background-color:transparent;font-variant-numeric:normal=
+;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre-wra=
+p">oAuth 1 </span><a href=3D"https://oauth.net/1/" style=3D"text-decoration=
+-line:none"><span style=3D"font-size:11pt;background-color:transparent;font=
+-variant-numeric:normal;font-variant-east-asian:normal;text-decoration-line=
+:underline;vertical-align:baseline;white-space:pre-wrap">https://oauth.net/=
+1/</span></a><span style=3D"font-size:11pt;background-color:transparent;fon=
+t-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:base=
+line;white-space:pre-wrap"> , oAuth2 </span><a href=3D"https://oauth.net/2/=
+" style=3D"text-decoration-line:none"><span style=3D"font-size:11pt;backgro=
+und-color:transparent;font-variant-numeric:normal;font-variant-east-asian:n=
+ormal;text-decoration-line:underline;vertical-align:baseline;white-space:pr=
+e-wrap">https://oauth.net/2/</span></a><span style=3D"font-size:11pt;backgr=
+ound-color:transparent;font-variant-numeric:normal;font-variant-east-asian:=
+normal;vertical-align:baseline;white-space:pre-wrap">=C2=A0</span></p></li>=
+<li dir=3D"ltr" style=3D"list-style-type:circle;font-size:11pt;font-family:=
+Arial;color:rgb(0,0,0);background-color:transparent;font-variant-numeric:no=
+rmal;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre=
+"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt=
+" role=3D"presentation"><span style=3D"font-size:11pt;background-color:tran=
+sparent;font-variant-numeric:normal;font-variant-east-asian:normal;vertical=
+-align:baseline;white-space:pre-wrap">JWT (</span><a href=3D"https://jwt.io=
+/" style=3D"text-decoration-line:none"><span style=3D"font-size:11pt;backgr=
+ound-color:transparent;font-variant-numeric:normal;font-variant-east-asian:=
+normal;text-decoration-line:underline;vertical-align:baseline;white-space:p=
+re-wrap">Learn more</span></a><span style=3D"font-size:11pt;background-colo=
+r:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;ve=
+rtical-align:baseline;white-space:pre-wrap">)</span></p></li></ul></ul><br>=
+<p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt">=
+<span style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0,0);background=
+-color:transparent;font-variant-numeric:normal;font-variant-east-asian:norm=
+al;vertical-align:baseline;white-space:pre-wrap">The above tasks are suppos=
+ed to be done by Thursday 28th of July 2022, we=E2=80=99ll send you a quest=
+ionnaire later this week to be filled to track your progress,</span></p><br=
+><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"=
+><span style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0,0);backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;vertical-align:baseline;white-space:pre-wrap">Best luck=C2=A0</span></p=
+><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"=
+><span style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0,0);backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;vertical-align:baseline;white-space:pre-wrap">Tala</span></p></span><br=
+ class=3D"gmail-Apple-interchange-newline"></div>
+
+--0000000000009e21c105e4a05a06--

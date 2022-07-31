@@ -1,0 +1,401 @@
+Delivered-To: aasahashish@gmail.com
+Received: by 2002:a4a:c615:0:0:0:0:0 with SMTP id l21csp1366159ooq;
+        Sun, 17 Jul 2022 02:57:05 -0700 (PDT)
+X-Google-Smtp-Source: AGRyM1vi/gOW9YJETrVZGqD6B0lObyFPgXCd47C6fU0rFJay3yJjBcAobnGza1CFugDBpy7iAcuy
+X-Received: by 2002:a05:6000:1152:b0:21d:7646:a976 with SMTP id d18-20020a056000115200b0021d7646a976mr19264002wrx.416.1658051824995;
+        Sun, 17 Jul 2022 02:57:04 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1658051824; cv=none;
+        d=google.com; s=arc-20160816;
+        b=pfWf6CpbhpLcK4FtXc1WyNu16P3AyYtsX70ohZDScgQmiTjBeL6nk+wNbnv51JhMgO
+         Y2k5Tbu74uA9vfmRrJYOLl7LPP4k/jPkAJGMCgwyR9TgMWSzO9kZ+yCbGDWv1yAlHfzp
+         ycndiFhS+OD36Uyz1pLNu7REC2lS45fArsEFNXUGnhDdVhOuEQBA7Trd7YZosXcZqMOK
+         Zb2EWLJRg3JFNEuQ+nM649Jutz11/gqFAwLZH4F57xO8/2LclmeU6NDhPnqPbhQT0skD
+         jfKS2KaZOYfsxuMYRfi7L3s5jsoZCvGGCKwtHk23/aDT0a/wioNmtVaJXzLkwa4e7yTp
+         lPBA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=LdKeGmBKJOyvxAAiPP6RYYMbyg4hN41JfD7KCz+AObE=;
+        b=y884Exsas11RAz9HMpK1U/HnvRTz4pd0imJhYpmwZ82mRuh2sGnQDzgibLGG71Ozip
+         9Xs762tHc0Zx3nD1GydTh4gk+t0deK6x2idU7UEquHarsOMHrZCVOu9pej76V0bf1bmo
+         fsgQyKiKZOkcRos287My03EC4ja5XCfu+bQzI5uRfht2OsZ4pXCS1hBt2ra/b0nzIHg2
+         6bzoG6M8HVDDm9FdxFB2e2FPwsPoitUhhhMR/230sRUeO5S8Hx5f4QODHHrAbTIW20Zn
+         bShw4trCU/BcTJLVuRQEDJ5C1DEi3JL5YZueLF/pWP0lnPERBtzKjCJi7gPpuapTo+Xe
+         O3vw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mashvisor.com header.s=google header.b=GWVAnqFN;
+       spf=pass (google.com: domain of tala@mashvisor.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=tala@mashvisor.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=mashvisor.com
+Return-Path: <tala@mashvisor.com>
+Received: from mail-sor-f65.google.com (mail-sor-f65.google.com. [209.85.220.65])
+        by mx.google.com with SMTPS id r20-20020adfbb14000000b0021da7425e72sor3864158wrg.59.2022.07.17.02.57.04
+        for <Aasahashish@gmail.com>
+        (Google Transport Security);
+        Sun, 17 Jul 2022 02:57:04 -0700 (PDT)
+Received-SPF: pass (google.com: domain of tala@mashvisor.com designates 209.85.220.65 as permitted sender) client-ip=209.85.220.65;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mashvisor.com header.s=google header.b=GWVAnqFN;
+       spf=pass (google.com: domain of tala@mashvisor.com designates 209.85.220.65 as permitted sender) smtp.mailfrom=tala@mashvisor.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=mashvisor.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=mashvisor.com; s=google;
+        h=mime-version:from:date:message-id:subject:cc;
+        bh=LdKeGmBKJOyvxAAiPP6RYYMbyg4hN41JfD7KCz+AObE=;
+        b=GWVAnqFNq9cWe+pE7Dege3XU7eIyaFj9dx/PtM/IzKdxXagJ6U3k54FrRBoCZn2Cna
+         CdEubpHrdmV0iOq/sgDLvOomMsLfGkOBfEfgCP+cUuDYSECzsjISIDGSmomJwjqu+RzV
+         rNhuZRukol/Kx3BgYQThJzRY6Nyrqaj40SHU2yq99qO5r2T6n6ThkzVS4226QoBIGdFK
+         Fddj6MjbgvJM2lilvV74q1UvaJDOMTB+46ejqa4UKoN2uBw2e6vWuskNcdaZ8yomVUfv
+         R8OVODfsu54pUnuSXzQaveB9V3xKnHM2Z0LaiqAO9bl/cvOo1vm/3Smfcz7X42Ks+cL0
+         xz7g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:cc;
+        bh=LdKeGmBKJOyvxAAiPP6RYYMbyg4hN41JfD7KCz+AObE=;
+        b=NNQ58FqzPRyMah5XeMI5jN7ck+ojb5L3gm7BQpUvC0fo7y0gUpRiSbjj+n8VkPk7td
+         QTaouRbStabVeuuNrw61zQ9gLR59xoWsB7Wscnyhnc5YY0kYzn97ZEpnbG0OQ3YLwDmt
+         KDep5xtnmGRujHkAUyc/yRxIoO5BHfcWhd5FwkuUVrG5/ISKtbTheyZ3GXiyQ2jJ8DcS
+         mqGXt6eshXG8uemn1Zl28F0c6U7oi0gh5U7nGViVp35Vn5Aq3IdL/ONms9EBnCCRsXWz
+         0jwpqqcLW7fUW0T5m5D4X+Yh6qao3GwYuAVdwnBrE2qkf+TzeV/mo7U1X9n4jp4gwWDj
+         Z8xA==
+X-Gm-Message-State: AJIora8qapjJngHlkKUFmIRcaomNWHwiTdEjSPqV+49/g5doLXsMhchA
+	nqNoglV3TG2r2M71zijSVvgMXwHGgPjqNuFnlT34YA==
+X-Received: by 2002:adf:f38f:0:b0:21d:66b5:21c with SMTP id
+ m15-20020adff38f000000b0021d66b5021cmt9126452wro.144.1658051824396; Sun, 17
+ Jul 2022 02:57:04 -0700 (PDT)
+MIME-Version: 1.0
+From: Tala Jamal <tala@mashvisor.com>
+Date: Sun, 17 Jul 2022 12:56:52 +0300
+Message-ID: <CAHpupnxY+D=sZCg9L79P5fZg+6kFiUHS1uaJ4xJTKHqTDatwOQ@mail.gmail.com>
+Subject: Training Notes - First week
+Cc: Mohammed Jebrini <mohd@mashvisor.com>
+Content-Type: multipart/alternative; boundary="00000000000003cef705e3fd466b"
+Bcc: Aasahashish@gmail.com
+
+--00000000000003cef705e3fd466b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Thanks for being part of Mashvisor=E2=80=99s internship program for summer =
+2022, as
+discussed in our call this morning, we will be sending you the weekly items
+we will cover every Sunday.
+
+17th of July Week Items:
+
+
+   1.
+
+   Get familiar with filing your timesheet on a daily basis, gentle
+   reminder you need to commit to 45 hours/week to cover the legal hours
+   requested by your university in the next 7 weeks period.
+   2.
+
+   Task #1: Setup an account with Mashvisor.com (in our development
+   environment) -> https://build.mashvisor.com/ use the product for at
+   least 8 hours, visit the different sections and pages, and read help cen=
+ter
+   and API documentation to understand what we are offering.
+   3.
+
+   Task #2: Introduction to JSON/XML
+   1.
+
+      https://www.json.org/json-en.html
+      2.
+
+      https://www.w3schools.com/js/js_json_intro.asp
+      3.
+
+      https://www.w3schools.com/xml/xml_whatis.asp
+      4.
+
+   Task #3: Agile Project Management (Scrum)
+   1.
+
+      https://www.scrum.org/resources/what-is-scrum
+      2.
+
+      https://www.youtube.com/watch?v=3DVFQtSqChlsk
+      5.
+
+   Task #4: Introduction to NoSQL Data Storages (MongoDB)
+   1.
+
+      After downloading the community server, start here
+      https://www.mongodb.com/docs/manual/tutorial/getting-started/
+      2.
+
+      Download community server (
+      https://www.mongodb.com/try/download/community)
+      3.
+
+      https://www.youtube.com/watch?v=3DpWbMrx5rVBE
+      6.
+
+   Task #5: Introduction to RESTful APIs:
+   1.
+
+      https://www.smashingmagazine.com/2018/01/understanding-using-rest-api=
+/
+      2.
+
+      https://www.sitepoint.com/developers-rest-api/
+      3.
+
+      Read the docs of Mashvisor=E2=80=99s APIs
+      https://www.mashvisor.com/api-doc/#introduction
+
+
+
+The above tasks are supposed to be done by Thursday 21st of July 2022,
+we=E2=80=99ll send you a questionnaire later this week to be filled to trac=
+k your
+progress,
+
+Best luck
+
+Tala
+
+--00000000000003cef705e3fd466b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span id=3D"gmail-docs-internal-guid-c97ed949-7fff-5141-7c=
+a3-605c1870eb49"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;ma=
+rgin-bottom:0pt"><span style=3D"font-size:11pt;font-family:Arial;color:rgb(=
+0,0,0);background-color:transparent;font-variant-numeric:normal;font-varian=
+t-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">Hi,</span=
+></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bot=
+tom:0pt"><span style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0,0);b=
+ackground-color:transparent;font-variant-numeric:normal;font-variant-east-a=
+sian:normal;vertical-align:baseline;white-space:pre-wrap">Thanks for being =
+part of Mashvisor=E2=80=99s internship program for summer 2022, as discusse=
+d in our call this morning, we will be sending you the weekly items we will=
+ cover every Sunday.=C2=A0</span></p><br><p dir=3D"ltr" style=3D"line-heigh=
+t:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font=
+-family:Arial;color:rgb(0,0,0);background-color:transparent;font-weight:700=
+;font-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:=
+baseline;white-space:pre-wrap">17th of July Week Items:</span></p><br><ol s=
+tyle=3D"margin-top:0px;margin-bottom:0px"><li dir=3D"ltr" style=3D"list-sty=
+le-type:decimal;font-size:11pt;font-family:Arial;color:rgb(0,0,0);backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line-h=
+eight:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span st=
+yle=3D"font-size:11pt;background-color:transparent;font-variant-numeric:nor=
+mal;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre-=
+wrap">Get familiar with filing your timesheet on a daily basis, gentle remi=
+nder you need to commit to 45 hours/week to cover the legal hours requested=
+ by your university in the next 7 weeks period.</span></p></li><li dir=3D"l=
+tr" style=3D"list-style-type:decimal;font-size:11pt;font-family:Arial;color=
+:rgb(0,0,0);background-color:transparent;font-variant-numeric:normal;font-v=
+ariant-east-asian:normal;vertical-align:baseline;white-space:pre"><p dir=3D=
+"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"p=
+resentation"><span style=3D"font-size:11pt;background-color:transparent;fon=
+t-weight:700;font-variant-numeric:normal;font-variant-east-asian:normal;ver=
+tical-align:baseline;white-space:pre-wrap">Task #1</span><span style=3D"fon=
+t-size:11pt;background-color:transparent;font-variant-numeric:normal;font-v=
+ariant-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">: Se=
+tup an account with Mashvisor.com (in our development environment) -&gt; </=
+span><a href=3D"https://build.mashvisor.com/" style=3D"text-decoration-line=
+:none"><span style=3D"font-size:11pt;background-color:transparent;font-vari=
+ant-numeric:normal;font-variant-east-asian:normal;text-decoration-line:unde=
+rline;vertical-align:baseline;white-space:pre-wrap">https://build.mashvisor=
+.com/</span></a><span style=3D"font-size:11pt;background-color:transparent;=
+font-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:b=
+aseline;white-space:pre-wrap"> use the product for at least 8 hours, visit =
+the different sections and pages, and read help center and API documentatio=
+n to understand what we are offering.</span></p></li><li dir=3D"ltr" style=
+=3D"list-style-type:decimal;font-size:11pt;font-family:Arial;color:rgb(0,0,=
+0);background-color:transparent;font-variant-numeric:normal;font-variant-ea=
+st-asian:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" sty=
+le=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentati=
+on"><span style=3D"font-size:11pt;background-color:transparent;font-weight:=
+700;font-variant-numeric:normal;font-variant-east-asian:normal;vertical-ali=
+gn:baseline;white-space:pre-wrap">Task #2:</span><span style=3D"font-size:1=
+1pt;background-color:transparent;font-variant-numeric:normal;font-variant-e=
+ast-asian:normal;vertical-align:baseline;white-space:pre-wrap"> Introductio=
+n to JSON/XML</span><span style=3D"font-size:11pt;background-color:transpar=
+ent;font-variant-numeric:normal;font-variant-east-asian:normal;vertical-ali=
+gn:baseline;white-space:pre-wrap"><span class=3D"gmail-Apple-tab-span" styl=
+e=3D"white-space:pre">	</span></span></p></li><ol style=3D"margin-top:0px;m=
+argin-bottom:0px"><li dir=3D"ltr" style=3D"list-style-type:lower-alpha;font=
+-size:11pt;font-family:Arial;color:rgb(0,0,0);background-color:transparent;=
+font-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:b=
+aseline;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margin-to=
+p:0pt;margin-bottom:0pt" role=3D"presentation"><a href=3D"https://www.json.=
+org/json-en.html" style=3D"text-decoration-line:none"><span style=3D"font-s=
+ize:11pt;background-color:transparent;font-variant-numeric:normal;font-vari=
+ant-east-asian:normal;text-decoration-line:underline;vertical-align:baselin=
+e;white-space:pre-wrap">https://www.json.org/json-en.html</span></a><span s=
+tyle=3D"font-size:11pt;background-color:transparent;font-variant-numeric:no=
+rmal;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre=
+-wrap">=C2=A0</span></p></li><li dir=3D"ltr" style=3D"list-style-type:lower=
+-alpha;font-size:11pt;font-family:Arial;color:rgb(0,0,0);background-color:t=
+ransparent;font-variant-numeric:normal;font-variant-east-asian:normal;verti=
+cal-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1.3=
+8;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><a href=3D"https:=
+//www.w3schools.com/js/js_json_intro.asp" style=3D"text-decoration-line:non=
+e"><span style=3D"font-size:11pt;background-color:transparent;font-variant-=
+numeric:normal;font-variant-east-asian:normal;text-decoration-line:underlin=
+e;vertical-align:baseline;white-space:pre-wrap">https://www.w3schools.com/j=
+s/js_json_intro.asp</span></a><span style=3D"font-size:11pt;background-colo=
+r:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;ve=
+rtical-align:baseline;white-space:pre-wrap">=C2=A0</span></p></li><li dir=
+=3D"ltr" style=3D"list-style-type:lower-alpha;font-size:11pt;font-family:Ar=
+ial;color:rgb(0,0,0);background-color:transparent;font-variant-numeric:norm=
+al;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre">=
+<p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt" =
+role=3D"presentation"><a href=3D"https://www.w3schools.com/xml/xml_whatis.a=
+sp" style=3D"text-decoration-line:none"><span style=3D"font-size:11pt;backg=
+round-color:transparent;font-variant-numeric:normal;font-variant-east-asian=
+:normal;text-decoration-line:underline;vertical-align:baseline;white-space:=
+pre-wrap">https://www.w3schools.com/xml/xml_whatis.asp</span></a><span styl=
+e=3D"font-size:11pt;background-color:transparent;font-variant-numeric:norma=
+l;font-variant-east-asian:normal;vertical-align:baseline;white-space:pre-wr=
+ap">=C2=A0</span></p></li></ol><li dir=3D"ltr" style=3D"list-style-type:dec=
+imal;font-size:11pt;font-family:Arial;color:rgb(0,0,0);background-color:tra=
+nsparent;font-weight:700;font-variant-numeric:normal;font-variant-east-asia=
+n:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><sp=
+an style=3D"font-size:11pt;background-color:transparent;font-variant-numeri=
+c:normal;font-variant-east-asian:normal;vertical-align:baseline;white-space=
+:pre-wrap">Task #3: </span><span style=3D"font-size:11pt;background-color:t=
+ransparent;font-weight:400;font-variant-numeric:normal;font-variant-east-as=
+ian:normal;vertical-align:baseline;white-space:pre-wrap">Agile Project Mana=
+gement (Scrum)=C2=A0</span></p></li><ol style=3D"margin-top:0px;margin-bott=
+om:0px"><li dir=3D"ltr" style=3D"list-style-type:lower-alpha;font-size:11pt=
+;font-family:Arial;color:rgb(0,0,0);background-color:transparent;font-varia=
+nt-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;wh=
+ite-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;marg=
+in-bottom:0pt" role=3D"presentation"><a href=3D"https://www.scrum.org/resou=
+rces/what-is-scrum" style=3D"text-decoration-line:none"><span style=3D"font=
+-size:11pt;background-color:transparent;font-variant-numeric:normal;font-va=
+riant-east-asian:normal;text-decoration-line:underline;vertical-align:basel=
+ine;white-space:pre-wrap">https://www.scrum.org/resources/what-is-scrum</sp=
+an></a><span style=3D"font-size:11pt;background-color:transparent;font-vari=
+ant-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;w=
+hite-space:pre-wrap">=C2=A0</span></p></li><li dir=3D"ltr" style=3D"list-st=
+yle-type:lower-alpha;font-size:11pt;font-family:Arial;color:rgb(0,0,0);back=
+ground-color:transparent;font-variant-numeric:normal;font-variant-east-asia=
+n:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"l=
+ine-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><a =
+href=3D"https://www.youtube.com/watch?v=3DVFQtSqChlsk" style=3D"text-decora=
+tion-line:none"><span style=3D"font-size:11pt;background-color:transparent;=
+font-variant-numeric:normal;font-variant-east-asian:normal;text-decoration-=
+line:underline;vertical-align:baseline;white-space:pre-wrap">https://www.yo=
+utube.com/watch?v=3DVFQtSqChlsk</span></a><span style=3D"font-size:11pt;bac=
+kground-color:transparent;font-variant-numeric:normal;font-variant-east-asi=
+an:normal;vertical-align:baseline;white-space:pre-wrap">=C2=A0</span></p></=
+li></ol><li dir=3D"ltr" style=3D"list-style-type:decimal;font-size:11pt;fon=
+t-family:Arial;color:rgb(0,0,0);background-color:transparent;font-variant-n=
+umeric:normal;font-variant-east-asian:normal;vertical-align:baseline;white-=
+space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-b=
+ottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;background-c=
+olor:transparent;font-weight:700;font-variant-numeric:normal;font-variant-e=
+ast-asian:normal;vertical-align:baseline;white-space:pre-wrap">Task #4:</sp=
+an><span style=3D"font-size:11pt;background-color:transparent;font-variant-=
+numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;white=
+-space:pre-wrap"> Introduction to NoSQL Data Storages (MongoDB)</span></p><=
+/li><ol style=3D"margin-top:0px;margin-bottom:0px"><li dir=3D"ltr" style=3D=
+"list-style-type:lower-alpha;font-size:11pt;font-family:Arial;color:rgb(0,0=
+,0);background-color:transparent;font-variant-numeric:normal;font-variant-e=
+ast-asian:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" st=
+yle=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentat=
+ion"><span style=3D"font-size:11pt;background-color:transparent;font-varian=
+t-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;whi=
+te-space:pre-wrap">After downloading the community server, start here </spa=
+n><a href=3D"https://www.mongodb.com/docs/manual/tutorial/getting-started/"=
+ style=3D"text-decoration-line:none"><span style=3D"font-size:11pt;backgrou=
+nd-color:transparent;font-variant-numeric:normal;font-variant-east-asian:no=
+rmal;text-decoration-line:underline;vertical-align:baseline;white-space:pre=
+-wrap">https://www.mongodb.com/docs/manual/tutorial/getting-started/</span>=
+</a><span style=3D"font-size:11pt;background-color:transparent;font-variant=
+-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;whit=
+e-space:pre-wrap">=C2=A0</span></p></li><li dir=3D"ltr" style=3D"list-style=
+-type:lower-alpha;font-size:11pt;font-family:Arial;color:rgb(0,0,0);backgro=
+und-color:transparent;font-variant-numeric:normal;font-variant-east-asian:n=
+ormal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line=
+-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span =
+style=3D"font-size:11pt;background-color:transparent;font-variant-numeric:n=
+ormal;font-variant-east-asian:normal;vertical-align:baseline;white-space:pr=
+e-wrap">Download community server (</span><a href=3D"https://www.mongodb.co=
+m/try/download/community" style=3D"text-decoration-line:none"><span style=
+=3D"font-size:11pt;background-color:transparent;font-variant-numeric:normal=
+;font-variant-east-asian:normal;text-decoration-line:underline;vertical-ali=
+gn:baseline;white-space:pre-wrap">https://www.mongodb.com/try/download/comm=
+unity</span></a><span style=3D"font-size:11pt;background-color:transparent;=
+font-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:b=
+aseline;white-space:pre-wrap">)=C2=A0</span></p></li><li dir=3D"ltr" style=
+=3D"list-style-type:lower-alpha;font-size:11pt;font-family:Arial;color:rgb(=
+0,0,0);background-color:transparent;font-variant-numeric:normal;font-varian=
+t-east-asian:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr"=
+ style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presen=
+tation"><a href=3D"https://www.youtube.com/watch?v=3DpWbMrx5rVBE" style=3D"=
+text-decoration-line:none"><span style=3D"font-size:11pt;background-color:t=
+ransparent;font-variant-numeric:normal;font-variant-east-asian:normal;text-=
+decoration-line:underline;vertical-align:baseline;white-space:pre-wrap">htt=
+ps://www.youtube.com/watch?v=3DpWbMrx5rVBE</span></a><span style=3D"font-si=
+ze:11pt;background-color:transparent;font-variant-numeric:normal;font-varia=
+nt-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">=C2=A0</=
+span></p></li></ol><li dir=3D"ltr" style=3D"list-style-type:decimal;font-si=
+ze:11pt;font-family:Arial;color:rgb(0,0,0);background-color:transparent;fon=
+t-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:base=
+line;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0=
+pt;margin-bottom:0pt" role=3D"presentation"><span style=3D"font-size:11pt;b=
+ackground-color:transparent;font-weight:700;font-variant-numeric:normal;fon=
+t-variant-east-asian:normal;vertical-align:baseline;white-space:pre-wrap">T=
+ask #5:</span><span style=3D"font-size:11pt;background-color:transparent;fo=
+nt-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:bas=
+eline;white-space:pre-wrap"> Introduction to RESTful APIs:</span></p></li><=
+ol style=3D"margin-top:0px;margin-bottom:0px"><li dir=3D"ltr" style=3D"list=
+-style-type:lower-alpha;font-size:11pt;font-family:Arial;color:rgb(0,0,0);b=
+ackground-color:transparent;font-variant-numeric:normal;font-variant-east-a=
+sian:normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=
+=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation=
+"><a href=3D"https://www.smashingmagazine.com/2018/01/understanding-using-r=
+est-api/" style=3D"text-decoration-line:none"><span style=3D"font-size:11pt=
+;background-color:transparent;font-variant-numeric:normal;font-variant-east=
+-asian:normal;text-decoration-line:underline;vertical-align:baseline;white-=
+space:pre-wrap">https://www.smashingmagazine.com/2018/01/understanding-usin=
+g-rest-api/</span></a></p></li><li dir=3D"ltr" style=3D"list-style-type:low=
+er-alpha;font-size:11pt;font-family:Arial;color:rgb(0,0,0);background-color=
+:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;ver=
+tical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"line-height:1=
+.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><a href=3D"http=
+s://www.sitepoint.com/developers-rest-api/" style=3D"text-decoration-line:n=
+one"><span style=3D"font-size:11pt;background-color:transparent;font-varian=
+t-numeric:normal;font-variant-east-asian:normal;text-decoration-line:underl=
+ine;vertical-align:baseline;white-space:pre-wrap">https://www.sitepoint.com=
+/developers-rest-api/</span></a></p></li><li dir=3D"ltr" style=3D"list-styl=
+e-type:lower-alpha;font-size:11pt;font-family:Arial;color:rgb(0,0,0);backgr=
+ound-color:transparent;font-variant-numeric:normal;font-variant-east-asian:=
+normal;vertical-align:baseline;white-space:pre"><p dir=3D"ltr" style=3D"lin=
+e-height:1.38;margin-top:0pt;margin-bottom:0pt" role=3D"presentation"><span=
+ style=3D"font-size:11pt;background-color:transparent;font-variant-numeric:=
+normal;font-variant-east-asian:normal;vertical-align:baseline;white-space:p=
+re-wrap">Read the docs of Mashvisor=E2=80=99s APIs </span><a href=3D"https:=
+//www.mashvisor.com/api-doc/#introduction" style=3D"text-decoration-line:no=
+ne"><span style=3D"font-size:11pt;background-color:transparent;font-variant=
+-numeric:normal;font-variant-east-asian:normal;text-decoration-line:underli=
+ne;vertical-align:baseline;white-space:pre-wrap">https://www.mashvisor.com/=
+api-doc/#introduction</span></a><span style=3D"font-size:11pt;background-co=
+lor:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;=
+vertical-align:baseline;white-space:pre-wrap">=C2=A0</span></p></li></ol></=
+ol><br><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-b=
+ottom:0pt"><span style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0,0)=
+;background-color:transparent;font-variant-numeric:normal;font-variant-east=
+-asian:normal;vertical-align:baseline;white-space:pre-wrap">The above tasks=
+ are supposed to be done by Thursday 21st of July 2022, we=E2=80=99ll send =
+you a questionnaire later this week to be filled to track your progress,</s=
+pan></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-=
+bottom:0pt"><span style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0,0=
+);background-color:transparent;font-variant-numeric:normal;font-variant-eas=
+t-asian:normal;vertical-align:baseline;white-space:pre-wrap">Best luck=C2=
+=A0</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margi=
+n-bottom:0pt"><span style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0=
+,0);background-color:transparent;font-variant-numeric:normal;font-variant-e=
+ast-asian:normal;vertical-align:baseline;white-space:pre-wrap">Tala</span><=
+/p><br></span></div>
+
+--00000000000003cef705e3fd466b--
